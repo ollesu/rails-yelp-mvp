@@ -1,0 +1,11 @@
+<h1><%= @restaurant.name %></h1>
+<p> located at <%= @restaurant.address %></p>
+<p>Call us at <%= @restaurant.phone_number %></p>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a rating", new_restaurant_review_path(@restaurant) %>
+<%= link_to "Homepage", restaurants_path, class: "btn btn-primary" %>
